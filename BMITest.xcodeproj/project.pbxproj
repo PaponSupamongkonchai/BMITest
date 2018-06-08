@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FBB452CC20C65C31005E8DC4 /* note4.wav in Resources */ = {isa = PBXBuildFile; fileRef = FBB452CB20C65C30005E8DC4 /* note4.wav */; };
 		FBC2D2D420C53C0800CD621F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC2D2D320C53C0800CD621F /* AppDelegate.swift */; };
 		FBC2D2D620C53C0800CD621F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC2D2D520C53C0800CD621F /* ViewController.swift */; };
 		FBC2D2D920C53C0800CD621F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC2D2D720C53C0800CD621F /* Main.storyboard */; };
@@ -14,6 +15,7 @@
 		FBC2D2DE20C53C1100CD621F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC2D2DC20C53C1100CD621F /* LaunchScreen.storyboard */; };
 		FBC2D2E920C53C1100CD621F /* BMITestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC2D2E820C53C1100CD621F /* BMITestTests.swift */; };
 		FBC2D2F420C53C1100CD621F /* BMITestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC2D2F320C53C1100CD621F /* BMITestUITests.swift */; };
+		FBC2D30220C5462200CD621F /* PoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC2D30120C5462200CD621F /* PoundViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FBB452CB20C65C30005E8DC4 /* note4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = note4.wav; path = "../../Xylophone-iOS11-master/Xylophone/note4.wav"; sourceTree = "<group>"; };
 		FBC2D2D020C53C0800CD621F /* BMITest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMITest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBC2D2D320C53C0800CD621F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBC2D2D520C53C0800CD621F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		FBC2D2EF20C53C1100CD621F /* BMITestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BMITestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBC2D2F320C53C1100CD621F /* BMITestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMITestUITests.swift; sourceTree = "<group>"; };
 		FBC2D2F520C53C1100CD621F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBC2D30120C5462200CD621F /* PoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoundViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +103,12 @@
 			children = (
 				FBC2D2D320C53C0800CD621F /* AppDelegate.swift */,
 				FBC2D2D520C53C0800CD621F /* ViewController.swift */,
+				FBC2D30120C5462200CD621F /* PoundViewController.swift */,
 				FBC2D2D720C53C0800CD621F /* Main.storyboard */,
 				FBC2D2DA20C53C1100CD621F /* Assets.xcassets */,
 				FBC2D2DC20C53C1100CD621F /* LaunchScreen.storyboard */,
 				FBC2D2DF20C53C1100CD621F /* Info.plist */,
+				FBB452CB20C65C30005E8DC4 /* note4.wav */,
 			);
 			path = BMITest;
 			sourceTree = "<group>";
@@ -232,6 +238,7 @@
 				FBC2D2DE20C53C1100CD621F /* LaunchScreen.storyboard in Resources */,
 				FBC2D2DB20C53C1100CD621F /* Assets.xcassets in Resources */,
 				FBC2D2D920C53C0800CD621F /* Main.storyboard in Resources */,
+				FBB452CC20C65C31005E8DC4 /* note4.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBC2D30220C5462200CD621F /* PoundViewController.swift in Sources */,
 				FBC2D2D620C53C0800CD621F /* ViewController.swift in Sources */,
 				FBC2D2D420C53C0800CD621F /* AppDelegate.swift in Sources */,
 			);
@@ -440,7 +448,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.boy.BMITest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -458,7 +466,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.boy.BMITest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

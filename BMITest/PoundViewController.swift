@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PoundViewController.swift
 //  BMITest
 //
 //  Created by Papon Supamongkonchai on 4/6/2561 BE.
@@ -9,73 +9,78 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
+class PoundViewController: UIViewController {
 
+    @IBOutlet weak var txtResultBMI: UILabel!
     @IBOutlet weak var resultImage: UIImageView!
-    @IBOutlet weak var labelW: UILabel!
-    @IBOutlet weak var labelH: UILabel!
-    @IBOutlet weak var txtW: UITextField!
-    @IBOutlet weak var txtH: UITextField!
-    @IBOutlet weak var txtresultBMI: UILabel!
     @IBOutlet weak var txtAlert: UILabel!
+    @IBOutlet weak var txtP: UITextField!
+    @IBOutlet weak var txtInch: UITextField!
+    @IBOutlet weak var txtRI: UITextField!
     var audioPlayer :AVAudioPlayer?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        txtresultBMI.isHidden = true
-        txtAlert.isHidden = true
-    }
 
+        // Do any additional setup after loading the view.
+        txtAlert.isHidden = true
+        txtResultBMI.isHidden = true
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-   
     
     @IBAction func btnCal(_ sender: UIButton) {
-        
         print(sender.tag)
         let url = Bundle.main.url(forResource: "note4", withExtension: "wav")
         if sender.tag == 0 {
             playSound(ur: url!)
         }
         
-        if txtW.text != "" && txtH.text != ""{
-            let ss1:String = txtW.text!
-            let ss2:String = txtH.text!
+        if txtP.text != "" && txtInch.text != ""{
+            let ss1:String = txtP.text!
+            let ss2:String = txtInch.text!
+            let ss3:String =  txtRI.text!
             var numberW = Double(ss1)
+            
             var numberH = Double(ss2)
             
-            calBMI(w: numberW!, h: numberH!)
+            var numberRI = Double(ss3)
+            
+            calBMI(w: numberW!, h: numberH!,r:numberRI!)
             
         }else{
-            //txtresultBMI.text = "Please input data for done"
+            
             txtAlert.isHidden = false
         }
     }
     
-    func calBMI(w:Double,h:Double) -> UIImage {
-        
-        var total:Double  = w/pow(h, 2)
+    func calBMI(w:Double,h:Double,r:Double) -> UIImage {
+        let w = w * 0.45359237
+        let h = h * 12 + r
+        let r = r * 0.0254
+        var total:Double  = w/pow(r, 2)
         if total > 25{
             resultImage.image = UIImage(named: "fat")
-            txtresultBMI.text = "You Fat now"
-            txtresultBMI.isHidden = false
+            txtResultBMI.text = "You Fat now"
+            txtResultBMI.isHidden = false
             return resultImage.image!
         }else if total > 18.5 {
             resultImage.image = UIImage(named: "normal")
-            txtresultBMI.text = "You Body perfect now"
-            txtresultBMI.isHidden = false
+            txtResultBMI.text = "You Body perfect now"
+            txtResultBMI.isHidden = false
             return resultImage.image!
         }else{
             resultImage.image = UIImage(named: "underw")
-            txtresultBMI.text = "You Body low weight now"
-            txtresultBMI.isHidden = false
+            txtResultBMI.text = "You Body low weight now"
+            txtResultBMI.isHidden = false
             return resultImage.image!
         }
-  
+        
+        
+        
     }
     func playSound(ur:URL) {
         do{
@@ -88,5 +93,5 @@ class ViewController: UIViewController {
             print(error)
         }
     }
-}
 
+}
